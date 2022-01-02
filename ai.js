@@ -96,6 +96,9 @@ function rdm(arr) {
 
 function mainDef() {
     var res = "";
+    if (user.includes("nice")) {
+        res += rdm(["Hee :) ", "Nice nice nice! "]);
+    }
     if (c(usr.nothanks)) {
         res += rdm(bot.nothanks);
     } else if(c(usr.thanks)) {

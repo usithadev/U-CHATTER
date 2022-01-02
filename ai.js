@@ -168,6 +168,9 @@ function mainDef() {
     if (user.includes("what is")) {
         res += rdm(bot.what);
     }
+    if (c(usr.whereyou)) {
+        res += rdm(bot.whereyou);
+    }
     //
     return res;
 }

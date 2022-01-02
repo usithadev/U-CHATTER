@@ -42,4 +42,8 @@ bot.on("edited_message", (ctx) => {
     ctx.reply("Please don't edit messages. If you wanna tell something: send it as a new message.");
 });
 
+bot.on("sticker", (ctx) => {
+    ctx.reply("Nice sticker! but I prefer text than stickers and emojis bicause Usitha(My programmer) programmed me for only recognize texts that you send me. ");
+});
+
 bot.launch();

@@ -1,4 +1,3 @@
-
 const usr = {
     hello: ["hello", "howdy", "hola"],
     howareyou: ["how are you", "how about you"],
@@ -36,7 +35,7 @@ const usr = {
 const bot = {
     hello: ["Hello! How are you? ", "Hi! Nice to meet you. "],
     howareyou: ["I'm fine! Thank you for asking. "],
-    bye: ["OK, See you later. "],
+    bye: ["OK, See you later. ", "Byee.. I was enjoying our conversation! ", "Hope to see you again! ", "Bye bye then. "],
     whoareyou: ["I'm an artificial intelligence chatbot created by Usitha Indeewara."],
     fine: ["Super! ", "OK! Good :) "],
     notfine: ["Oh, What's wrong? "],
@@ -66,7 +65,9 @@ const bot = {
     what: ["I don't know. I think you can search it on the internet. "],
     auth: ["Usitha Indeewara created me. "],
     whatcando: ["I wanna chat with people. I can chat with you. "],
-    human: ["I am not a human. I am an artificial intelligence chat robot. "]
+    human: ["I am not a human. I am an artificial intelligence chat robot. "],
+    who: ["I don't know who is that. Maybe it is possible to search on the internet about who is that. "],
+    when: ["I don't know. "]
 }
 const alt = ["OK", "Sorry, I didn't understand that!", "Let's change the subject"];
 
@@ -171,9 +172,6 @@ function mainDef() {
     if (c(usr.told)) {
         res += rdm(bot.told);
     }
-    if (user.includes("what is")) {
-        res += rdm(bot.what);
-    }
     if (c(usr.whereyou)) {
         res += rdm(bot.whereyou);
     }
@@ -206,6 +204,12 @@ exports.sendLog = function(userinput) {
         return mainDef();
     } else if(user == "hi") {
         return rdm(bot.hello);
+    } else if (user.includes("what is")) {
+        return rdm(bot.what);
+    } else if(user.includes("who")) {
+        return rdm(bot.who);
+    } else if(user.includes("when")) {
+        return rdm(bot.when);
     } else {
         return rdm(alt);
     }

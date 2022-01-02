@@ -30,7 +30,8 @@ const usr = {
     told: ["told"],
     canyou: ["can you", "cannot you"],
     auth: ["created you", "your author", "your creator"],
-    whatcando: ["you do"]
+    whatcando: ["you do"],
+    human: ["are you a human", "you are a human", "are you a robot", "you are a robot", "are you a bot", "you are a bot"]
 }
 const bot = {
     hello: ["Hello! How are you? ", "Hi! Nice to meet you. "],
@@ -64,7 +65,8 @@ const bot = {
     canyou: ["No idea "],
     what: ["I don't know. I think you can search it on the internet. "],
     auth: ["Usitha Indeewara created me. "],
-    whatcando: ["I wanna chat with people. I can chat with you. "]
+    whatcando: ["I wanna chat with people. I can chat with you. "],
+    human: ["I am not a human. I am an artificial intelligence chat robot. "]
 }
 const alt = ["OK", "Sorry, I didn't understand that!", "Let's change the subject"];
 
@@ -180,6 +182,9 @@ function mainDef() {
     }
     if (c(usr.whatcando)) {
         res += rdm(bot.whatcando);
+    }
+    if (c(usr.human)) {
+        res += rdm(bot.human);
     }
     //
     return res;

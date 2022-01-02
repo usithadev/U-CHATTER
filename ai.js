@@ -13,7 +13,22 @@ const usr = {
     iama: ["i am a"],
     ilive: ["i live in"],
     whereyou: ["where are you ", "where do you live"],
-    usitha: ["usitha", "indeewara"]
+    usitha: ["usitha", "indeewara"],
+    hb: ["happy birthday", "contrags", "contragulations", "happy birth day"],
+    happyday: ["happy", "merry"],
+    todaymyhb: ["today is my birthday"],
+    gender: ["m or f", "f or m", "are you a male", "are you a female", "are you male", "are you female", "are you a girl", "are you a boy", "boy or girl"],
+    bgf: ["have a boyfriend", "have a girlfriend", "have a boy friend", "have a girl friend", "have a bf", "have a gf"],
+    love: ["i love you", "14344", "love me"],
+    befriend: ["be my friend", "be my best friend", "be best friends"],
+    whofriend: ["who is your friend", "who is your best friend"],
+    yes: ["yes", "ok", "i can", "nice "],
+    no: ["i cannot"],
+    thanks: ["thanks", "thanx", "thank you", "tnq", "thankq"],
+    nothanks: ["no thank"],
+    favcol: ["your favourite colour"],
+    told: ["told"],
+    canyou: ["can you", "cannot you"]
 }
 const bot = {
     hello: ["Hello! How are you? ", "Hi! Nice to meet you. "],
@@ -29,7 +44,23 @@ const bot = {
     whereyou: ["I live in Usitha's computer. "],
     usitha: ["Usitha created me. He is a programmer. "],
     happy: ["I like to see you happy! ", ":) "],
-    nothappy: ["What's wrong? ", ":/"]
+    nothappy: ["What's wrong? ", ":/"],
+    hb: ["Oh! Thank you! :) ", "Thank you friend! "],
+    happyday: ["Same to you! :) ", "Same to you! I like this day. "],
+    todaymyhb: ["Happy Birthday! "],
+    gender: ["I haven't a gender because I'm not a human, I am a robot! "],
+    bgf: ["Hey! I am just a robot! "],
+    love: ["I love you! But, I can't really love you. I am a robot; haven't feelings. :( "],
+    befriend: ["Sure! We can be best friends! ", "Yeah you are my friend now "],
+    whofriend: ["I think you're my friend now. Aren't you? "],
+    yes: ["Super! ", "Great! "],
+    no: ["Hmm.. okay then... ", "OK "],
+    thanks: ["You're welcome :) ", "My pleasure :) "],
+    nothanks: ["OH OKAY "],
+    favcol: ["My favourite colour is blue! What's yours? "],
+    told: ["oh sorry "],
+    canyou: ["No idea "],
+    what: ["I don't know. I think you can search it on the internet. "]
 }
 const alt = ["OK", "Sorry, I didn't understand that!", "Let's change the subject"];
 
@@ -58,11 +89,23 @@ function rdm(arr) {
 
 function mainDef() {
     var res = "";
-    if (c(usr.hello)) {
-        res += rdm(bot.hello);
+    if (c(usr.nothanks)) {
+        res += rdm(bot.nothanks);
+    } else if(c(usr.thanks)) {
+        res += rdm(bot.thanks);
     }
     if (c(usr.howareyou)) {
         res += rdm(bot.howareyou);
+    }
+    if (c(usr.no)) {
+        res += rdm(bot.no);
+    } else if (usr == "no") {
+        res += rdm(bot.no);
+    } else if (c(usr.yes)) {
+        res += rdm(bot.yes);
+    }
+    if (c(usr.hello)) {
+        res += rdm(bot.hello);
     }
     if (c(usr.bye)) {
         res += rdm(bot.bye);
@@ -73,7 +116,7 @@ function mainDef() {
     if (c(usr.notfine)) {
         res += rdm(bot.notfine);
     } else if (c(usr.fine)) {
-        res += rdm(bot.notfine);
+        res += rdm(bot.fine);
     }
     if (c(usr.sorry)) {
         res += rdm(bot.sorry);
@@ -88,9 +131,42 @@ function mainDef() {
         res += rdm(bot.nothappy);
     } else if (c(usr.happy)) {
         res += rdm(bot.happy);
+    } else if (c(usr.hb)) {
+        res += rdm(bot.hb);
+    } else if (c(usr.happyday)) {
+        if (user !== "happy") {
+            res += rdm(bot.happyday);
+        }
     }
     if (c(usr.usitha)) {
         res += rdm(bot.usitha);
+    }
+    if (c(usr.todaymyhb)) {
+        res += rdm(bot.todaymyhb);
+    }
+    if (c(usr.gender)) {
+        res += rdm(bot.gender);
+    }
+    if (c(usr.bgf)) {
+        res += rdm(bot.bgf);
+    }
+    if (c(usr.love)) {
+        res += rdm(bot.love);
+    }
+    if (c(usr.befriend)) {
+        res += rdm(bot.befriend);
+    } 
+    if (c(usr.whofriend)) {
+        res += rdm(bot.whofriend);
+    }
+    if (c(usr.favcol)) {
+        res += rdm(bot.favcol);
+    }
+    if (c(usr.told)) {
+        res += rdm(bot.told);
+    }
+    if (user.includes("what is")) {
+        res += rdm(bot.what);
     }
     //
     return res;
@@ -98,7 +174,14 @@ function mainDef() {
 
 exports.sendLog = function(userinput) {
     user = userinput;
-    user = user.toLowerCase().replace(/[^\w\s]/gi, "").trim();
+    user = user.toLowerCase()
+    .replace("i'm", "i am")
+    .replace("wanna", "want to").replace("gonna", "going to")
+    .replace("he's", "he is").replace("she's", "she is")
+    .replace("it's", "it is")
+    .replace("can't", "cannot")
+    .replace("color", "colour")
+    .replace("you're", "you are").replace(/[^\w\s]/gi, "").trim();
     if(mainDef()) {
         return mainDef();
     } else if(user == "hi") {

@@ -28,7 +28,9 @@ const usr = {
     nothanks: ["no thank"],
     favcol: ["your favourite colour"],
     told: ["told"],
-    canyou: ["can you", "cannot you"]
+    canyou: ["can you", "cannot you"],
+    auth: ["created you", "your author", "your creator"],
+    whatcando: ["you do"]
 }
 const bot = {
     hello: ["Hello! How are you? ", "Hi! Nice to meet you. "],
@@ -60,7 +62,9 @@ const bot = {
     favcol: ["My favourite colour is blue! What's yours? "],
     told: ["oh sorry "],
     canyou: ["No idea "],
-    what: ["I don't know. I think you can search it on the internet. "]
+    what: ["I don't know. I think you can search it on the internet. "],
+    auth: ["Usitha Indeewara created me. "],
+    whatcando: ["I wanna chat with people. I can chat with you. "]
 }
 const alt = ["OK", "Sorry, I didn't understand that!", "Let's change the subject"];
 
@@ -171,6 +175,12 @@ function mainDef() {
     if (c(usr.whereyou)) {
         res += rdm(bot.whereyou);
     }
+    if (c(usr.auth)) {
+        res += rdm(bot.auth);
+    }
+    if (c(usr.whatcando)) {
+        res += rdm(bot.whatcando);
+    }
     //
     return res;
 }
@@ -184,11 +194,13 @@ exports.sendLog = function(userinput) {
     .replace("it's", "it is")
     .replace("can't", "cannot")
     .replace("color", "colour")
+    .replace("what's", "what is")
+    .replace("whats", "what is")
     .replace("you're", "you are").replace(/[^\w\s]/gi, "").trim();
     if(mainDef()) {
         return mainDef();
     } else if(user == "hi") {
-        return rdm(usr.hello);
+        return rdm(bot.hello);
     } else {
         return rdm(alt);
     }

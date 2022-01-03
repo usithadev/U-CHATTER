@@ -36,7 +36,7 @@ const bot = {
     hello: ["Hello! How are you? ", "Hi! Nice to meet you. "],
     howareyou: ["I'm fine! Thank you for asking. "],
     bye: ["OK, See you later. ", "Byee.. I was enjoying our conversation! ", "Hope to see you again! ", "Bye bye then. "],
-    whoareyou: ["I'm an artificial intelligence chatbot created by Usitha Indeewara."],
+    whoareyou: ["I'm an artificial intelligence chatbot created by Usitha Indeewara. My name is U CHATTER. "],
     fine: ["Super! ", "OK! Good :) "],
     notfine: ["Oh, What's wrong? "],
     sorry: ["Hey! Don't wanna be sorry. That's not your fault. ", "I can forgive you anytime. "],

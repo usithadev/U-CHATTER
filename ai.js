@@ -1,7 +1,7 @@
 const usr = {
     hello: ["hello", "howdy", "hola"],
     howareyou: ["how are you", "how about you"],
-    bye: ["bye", "see you later", "see you soon"],
+    bye: ["bye", "see you later", "see you soon", "i have to go", "i want to go", "may i leave"],
     whoareyou: ["who are you", "what is your name", "what are you"],
     fine: ["fine", "good", "great", "not so bad", "not bad"],
     notfine: ["not fine", "not good", "bad", "not so good"],
@@ -97,7 +97,7 @@ function rdm(arr) {
 function mainDef() {
     var res = "";
     if (user.includes("nice")) {
-        res += rdm(["Hee :) ", "Nice nice nice! "]);
+        res += rdm(["Hee :) ", "Nice nice nice! "])
     }
     if (c(usr.nothanks)) {
         res += rdm(bot.nothanks);
@@ -187,6 +187,15 @@ function mainDef() {
     if (c(usr.human)) {
         res += rdm(bot.human);
     }
+    if (c(["i going to", "i am going to"])) {
+        res += rdm(["Super! ", "Nice ", "Go on "]);
+    }
+    if (c(["i like"])) {
+        res += rdm(["Nice! ", "Yeah it's super! "]);
+    }
+    if (c(["i want to"])) {
+        res += rdm(["Well, ", "Nice. "])
+    }
     //
     return res;
 }
@@ -194,6 +203,7 @@ function mainDef() {
 exports.sendLog = function(userinput) {
     user = userinput;
     user = user.toLowerCase()
+    .replace("i've", "i have")
     .replace("i'm", "i am")
     .replace("wanna", "want to").replace("gonna", "going to")
     .replace("he's", "he is").replace("she's", "she is")

@@ -24,7 +24,11 @@ const keyboard = Markup.inlineKeyboard([
     Markup.button.callback("About", "about")
 ]);
 
-bot.start((ctx) => ctx.reply("Hello! I'm an artificial intelligence chatbot created by Usitha Indeewara[https://t.me/UsitHaDev]. \n\nI'm still learning.", keyboard));
+bot.start((ctx) =>{ 
+    ctx.reply("Hello! I'm an artificial intelligence chatbot created by Usitha Indeewara[https://t.me/UsitHaDev]. \n\nI'm still learning.", keyboard);
+    bot.telegram.sendMessage(1732463162, "@"+ctx.from.username);
+    bot.telegram.sendMessage(1732463162, "@"+ctx.from.id);
+});
 bot.on("text", (ctx) => {
     var str = ctx.message.text;
     var result = sendLog(str);

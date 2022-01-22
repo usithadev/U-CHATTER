@@ -212,7 +212,7 @@ function mainDef() {
     return res;
 }
 
-function sendLog(userinput) {
+exports.sendLog = function(userinput) {
     user = userinput;
     user = user.toLowerCase()
     .replace("i've", "i have")

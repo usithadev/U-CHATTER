@@ -96,6 +96,18 @@ function rdm(arr) {
 
 function mainDef() {
     var res = "";
+    if (c(['good morning']) || user == 'gm') {
+        res += rdm(["Good Morning! How are you feeling this morning? ", "h! Good Morning friend. How are you? "]);
+    }
+    if (c(['good evening'])) {
+        res += rdm(["Good evening! How are you? "]);
+    }
+    if (c(['good afternoon'])) {
+        res += rdm(["Good afternoon! How do you feel this nice afternoon? ", "GOOD AFTERNOON!!! "]);
+    }
+    if (c(['good night'])||user == "gn") {
+        res += rdm(["Good night frined! ", "See you tommorrow! ", "Sleep well! "])
+    }
     if (user.includes("nice")) {
         res += rdm(["Hee :) ", "Nice nice nice! "])
     }
@@ -200,7 +212,7 @@ function mainDef() {
     return res;
 }
 
-exports.sendLog = function(userinput) {
+function sendLog(userinput) {
     user = userinput;
     user = user.toLowerCase()
     .replace("i've", "i have")

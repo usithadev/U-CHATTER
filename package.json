@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usithadevsl/U-CHATTER.git"
+    "url": "https://github.com/usithaindeewara/U-CHATTER.git"
   },
   "scripts": {
     "start": "node index.js"

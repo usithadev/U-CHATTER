@@ -2,40 +2,33 @@ const { Telegraf, Markup } =  require("telegraf");
 const { sendLog } = require("./ai");
 const bot = new Telegraf("5005394698:AAH9wIqMd3qVwhtQYaZy7CxizDcIRPZDaQw");
 
-bot.action("help", (ctx) => {
-    ctx.answerCbQuery("Getting help content...");
+bot.command('about', (ctx) => {
+    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
+    ]))
+})
+
+bot.command('help', (ctx) => {
     ctx.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
-});
-bot.action("about", (ctx) => {
-    ctx.answerCbQuery("Getting about content...")
-    cont.reply("This is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
-        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
-    ]));
-});
-
-function abouti(cont) {
-    cont.reply("This is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
-        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
-    ]));
-}
-
-function helpi(cont) {
-    cont.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
-}
-
-bot.help((ctx) => {
-    helpi(ctx);
-});
-
-bot.command("about", (ctx) => {
-    abouti(ctx);
-});
+})
 
 const keyboard = Markup.inlineKeyboard([
     [{text: "Developer", url: "https://t.me/UsitHaDev"}],
     [{text: "Help", callback_data: "help"}, {text: "About", callback_data: "about"}],
     [{text: "Updates channel", url: "https://t.me/usithadevinfo"}]
 ]);
+
+bot.action('help', (ctx) => {
+    ctx.answerCbQuery("Getting help content");
+    ctx.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+})
+
+bot.action('about', (ctx) => {
+    ctx.answerCbQuery("Getting about content...");
+    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
+    ]))
+})
 
 bot.start((ctx) =>{ 
     ctx.reply("Hello! I'm an artificial intelligence chatbot created by Usitha Indeewara ( @UsitHaDev ). \n\nI'm still learning.", keyboard);

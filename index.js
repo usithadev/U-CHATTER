@@ -3,8 +3,8 @@ const { sendLog } = require("./ai");
 const bot = new Telegraf("5005394698:AAH9wIqMd3qVwhtQYaZy7CxizDcIRPZDaQw");
 
 bot.action("help", (ctx) => {
-    cont.answerCbQuery("Getting help content...");
-    cont.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+    ctx.answerCbQuery("Getting help content...");
+    ctx.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
 });
 bot.action("about", (ctx) => {
     ctx.answerCbQuery("Getting about content...")

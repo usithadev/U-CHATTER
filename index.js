@@ -2,6 +2,17 @@ const { Telegraf, Markup } =  require("telegraf");
 const { sendLog } = require("./ai");
 const bot = new Telegraf("5005394698:AAH9wIqMd3qVwhtQYaZy7CxizDcIRPZDaQw");
 
+bot.action("help", (ctx) => {
+    cont.answerCbQuery("Getting help content...");
+    cont.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+});
+bot.action("about", (ctx) => {
+    ctx.answerCbQuery("Getting about content...")
+    cont.reply("This is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
+    ]));
+});
+
 function abouti(cont) {
     cont.reply("This is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
         [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
@@ -36,15 +47,6 @@ bot.on("text", (ctx) => {
     var str = ctx.message.text;
     var result = sendLog(str);
     ctx.reply(result);
-});
-
-bot.action("help", (ctx) => {
-    cont.answerCbQuery("Getting help content...");
-    helpi(ctx);
-});
-bot.action("about", (ctx) => {
-    ctx.answerCbQuery("Getting about content...")
-    abouti(ctx);
 });
 
 bot.on("edited_message", (ctx) => {

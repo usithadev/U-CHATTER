@@ -3,7 +3,7 @@ const { sendLog } = require("./ai");
 const bot = new Telegraf("5005394698:AAH9wIqMd3qVwhtQYaZy7CxizDcIRPZDaQw");
 
 bot.command('about', (ctx) => {
-    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+    ctx.reply("This is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
         [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
     ]))
 })

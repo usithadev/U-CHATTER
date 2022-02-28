@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usithaindeewara/U-CHATTER.git"
+    "url": "https://github.com/usithadev/U-CHATTER.git"
   },
   "scripts": {
     "start": "node index.js"
@@ -13,6 +13,7 @@
   "author": "Usitha Indeewara",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "telegraf": "^4.5.2"
   }
 }

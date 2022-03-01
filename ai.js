@@ -106,7 +106,7 @@ function mainDef() {
         res += rdm(["Good afternoon! How do you feel this nice afternoon? ", "GOOD AFTERNOON!!! "]);
     }
     if (c(['good night'])||user == "gn") {
-        res += rdm(["Good night frined! ", "See you tommorrow! ", "Sleep well! "])
+        res += rdm(["Good night frined! ", "See you tommorrow! ", "Sleep well! "]);
     }
     if (user.includes("nice")) {
         res += rdm(["Hee :) ", "Nice nice nice! "])
@@ -215,16 +215,16 @@ function mainDef() {
 exports.sendLog = function(userinput) {
     user = userinput;
     user = user.toLowerCase()
-    .replace("i've", "i have")
-    .replace("i'm", "i am")
-    .replace("wanna", "want to").replace("gonna", "going to")
-    .replace("he's", "he is").replace("she's", "she is")
-    .replace("it's", "it is")
-    .replace("can't", "cannot")
-    .replace("color", "colour")
-    .replace("what's", "what is")
-    .replace("whats", "what is")
-    .replace("you're", "you are").replace(/[^\w\s]/gi, "").trim();
+    .replaceAll("i'm", "i am")
+    .replaceAll("wanna", "want to").replace("gonna", "going to")
+    .replaceAll("i've", "i have")
+    .replaceAll("he's", "he is").replace("she's", "she is")
+    .replaceAll("it's", "it is")
+    .replaceAll("can't", "cannot")
+    .replaceAll("color", "colour")
+    .replaceAll("what's", "what is")
+    .replaceAll("whats", "what is")
+    .replaceAll("you're", "you are").replace(/[^\w\s]/gi, "").trim();
     if(mainDef()) {
         return mainDef();
     } else if(user == "hi") {

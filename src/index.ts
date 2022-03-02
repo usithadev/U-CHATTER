@@ -6,7 +6,7 @@ config();
 const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
 bot.command('about', (ctx) => {
-    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: Typescript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
         [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
     ]))
 })

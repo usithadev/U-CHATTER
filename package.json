@@ -9,7 +9,6 @@
   },
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "build": "tsc",
     "test": "npm run build"
   },
   "author": "Usitha Indeewara",

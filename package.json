@@ -2,18 +2,23 @@
   "name": "u-chatter",
   "version": "1.0.0",
   "description": "An artificial intelligence chatbot by Usitha Indeewara.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/usithadev/U-CHATTER.git"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./dist/index.js",
+    "build": "tsc"
   },
   "author": "Usitha Indeewara",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.0",
     "telegraf": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
   }
 }

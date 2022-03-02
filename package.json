@@ -8,8 +8,9 @@
     "url": "https://github.com/usithadev/U-CHATTER.git"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "tsc"
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "test": "npm run build"
   },
   "author": "Usitha Indeewara",
   "license": "MIT",

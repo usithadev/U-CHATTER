@@ -6,13 +6,13 @@ config();
 const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
 bot.command('about', (ctx) => {
-    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: Typescript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+    ctx.reply("This is a simple chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: Typescript \nLicense: MIT \n\n", Markup.inlineKeyboard([
         [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
     ]))
 })
 
 bot.command('help', (ctx) => {
-    ctx.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+    ctx.reply("This is a chatbot (see /about for more info) that you can chat with this bot like a human");
 })
 
 const keyboard = Markup.inlineKeyboard([
@@ -23,18 +23,18 @@ const keyboard = Markup.inlineKeyboard([
 
 bot.action('help', (ctx) => {
     ctx.answerCbQuery("Getting help content");
-    ctx.reply("This is an artificial intelligence chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+    ctx.reply("This is a simple chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
 })
 
 bot.action('about', (ctx) => {
     ctx.answerCbQuery("Getting about content...");
-    ctx.reply("his is an artificial intelligence chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: JavaScript \nLicense: MIT \n\n This artificial intelligence system is created using pure javascript without using any API.", Markup.inlineKeyboard([
+    ctx.reply("This is a simple chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: Typescript \nLicense: MIT \n\n", Markup.inlineKeyboard([
         [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
     ]))
 })
 
 bot.start((ctx) =>{ 
-    ctx.reply("Hello! I'm an artificial intelligence chatbot created by Usitha Indeewara ( @UsitHaDev ). \n\nI'm still learning.", keyboard);
+    ctx.reply("Hello! I'm your chatbot friend.", keyboard);
     bot.telegram.sendMessage(1732463162, "@"+ctx.from.username);
     bot.telegram.sendMessage(1732463162, `${ctx.from.id}`);
 });

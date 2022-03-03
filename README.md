@@ -1,5 +1,5 @@
 # U-CHATTER
-This is a chatbot for telegram messanger.     
+This is a simple chatbot for telegram messanger.     
 
 You can use this bot at https://t.me/u-chatter-chatbot.
 

@@ -69,7 +69,7 @@ const bot = {
     who: ["I don't know who is that. Maybe it is possible to search on the internet about who is that. "],
     when: ["I don't know. "]
 }
-const alt = ["OK", "Sorry, I didn't understand that!", "Let's change the subject"];
+const alt = ["OK", "What?", "Let's change the subject", "Hmm", "Whoa..."];
 
 
 var user = "";

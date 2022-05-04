@@ -7,7 +7,8 @@ const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
 bot.command('about', (ctx) => {
     ctx.reply("This is a simple chatbot created by Usitha Indeewara(@UsitHaDev). \n\nProgramming language: Typescript \nLicense: MIT \n\n", Markup.inlineKeyboard([
-        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}]
+        [{text: "Join our Updates channel", url: "https://t.me/usithadevinfo"}],
+        [{text: "Source code ;)", url: "https://github.com/usithadev/U-CHATTER"}]
     ]))
 })
 

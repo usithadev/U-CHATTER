@@ -8,7 +8,7 @@
     "url": "https://github.com/usithadev/U-CHATTER.git"
   },
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "node dist/index.js",
     "test": "echo ;)",
     "build": "tsc"
   },

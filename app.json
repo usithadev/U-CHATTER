@@ -1,0 +1,17 @@
+{
+    "name": "U-CHATTER CHATBOT",
+    "description": "A very simple chatbot written in Typescript.",
+    "keywords": [
+        "chatbot",
+        "telegram",
+        "bot",
+        "telegraf",
+        "node",
+        "typescript"
+    ],
+    "env": {
+        "BOT_TOKEN": {
+            "description": "The bot api token got from @BotFather in telegram"
+        }
+    }
+}

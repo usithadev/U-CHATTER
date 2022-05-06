@@ -24,7 +24,7 @@ const keyboard = Markup.inlineKeyboard([
 
 bot.action('help', (ctx) => {
     ctx.answerCbQuery("Getting help content");
-    ctx.reply("This is a simple chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like a human");
+    ctx.reply("This is a simple chatbot (see /about for more info) by Usitha Indeewara and you can chat with this bot like talking to a human");
 })
 
 bot.action('about', (ctx) => {

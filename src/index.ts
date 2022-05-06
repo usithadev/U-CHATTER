@@ -13,7 +13,7 @@ bot.command('about', (ctx) => {
 })
 
 bot.command('help', (ctx) => {
-    ctx.reply("This is a chatbot (see /about for more info) that you can chat with this bot like a human");
+    ctx.reply("This is a chatbot (see /about for more info) that you can chat with this bot like talking to a a human");
 })
 
 const keyboard = Markup.inlineKeyboard([
